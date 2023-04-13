@@ -1,4 +1,4 @@
-name: Houge Pangu - CI/CD
+name: Pangu - Main CI/CD
 
 on:
   push:

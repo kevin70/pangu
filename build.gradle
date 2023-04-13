@@ -1,0 +1,84 @@
+plugins {
+  id "java"
+  id "jacoco"
+  id "maven-publish"
+  id "signing"
+  id "io.spring.dependency-management" version "1.1.0"
+}
+
+allprojects {
+
+  group = "cool.houge.pangu"
+  version = "1.0.0-SNAPSHOT"
+
+  apply plugin: "java"
+  apply plugin: "jacoco"
+  apply plugin: "maven-publish"
+  apply plugin: "signing"
+  apply plugin: "io.spring.dependency-management"
+  apply from: "$rootDir/gradle/dm.gradle"
+
+  java {
+    sourceCompatibility = JavaVersion.toVersion("17")
+    targetCompatibility = JavaVersion.toVersion("17")
+  }
+
+  tasks.withType(JavaCompile).configureEach {
+    options.encoding = "UTF-8"
+  }
+
+  test {
+    useJUnitPlatform()
+  }
+
+  jacocoTestReport {
+    dependsOn test
+    reports {
+      xml.required = false
+      csv.required = false
+    }
+  }
+
+  jar {
+    manifest {
+      attributes(
+        "Implementation-Title": "${project.name}",
+        "Implementation-Version": "${project.version}"
+      )
+    }
+  }
+
+  javadoc {
+    if (JavaVersion.current().isJava9Compatible()) {
+      options.addBooleanOption("html5", true)
+    }
+  }
+
+  publishing {
+    repositories {
+      maven {
+        def releasesRepoUrl = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+        def snapshotsRepoUrl = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+        url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+        credentials {
+          username = System.getenv("OSSRH_USERNAME")
+          password = System.getenv("OSSRH_PASSWORD")
+        }
+      }
+    }
+  }
+
+  dependencies {
+    annotationProcessor("org.projectlombok:lombok")
+    compileOnly("org.projectlombok:lombok")
+
+    // Test
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("org.assertj:assertj-core")
+    testImplementation("net.datafaker:datafaker")
+  }
+
+  repositories {
+    mavenCentral()
+  }
+}

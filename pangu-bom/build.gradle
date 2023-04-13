@@ -1,0 +1,42 @@
+dependencyManagement {
+  dependencies {
+    dependency("${group}:pangu-lang:${version}")
+  }
+}
+
+publishing {
+  publications {
+    maven(MavenPublication) {
+      from components.java
+
+      pom {
+        packaging = "pom"
+        description = "Houge依赖库版本管理"
+
+        licenses {
+          license {
+            name = "The Apache License, Version 2.0"
+            url = "https://www.apache.org/licenses/LICENSE-2.0.txt"
+          }
+        }
+        developers {
+          developer {
+            id = "ZY"
+            name = "Zou Yong"
+            email = "kzou227@qq.com"
+          }
+        }
+
+        scm {
+          connection = "scm:git:https://github.com/kevin70/pangu.git"
+          developerConnection = "scm:git:git@github.com:kevin70/pangu.git"
+          url = "https://github.com/kevin70/pangu"
+        }
+      }
+    }
+  }
+}
+
+signing {
+  sign publishing.publications.maven
+}

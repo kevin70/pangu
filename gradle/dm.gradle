@@ -1,0 +1,84 @@
+dependencyManagement {
+  // =================== 测试库 ===================
+  imports {
+    mavenBom("org.junit:junit-bom:5.9.2")
+    mavenBom("org.mockito:mockito-bom:5.1.1")
+  }
+  dependencies {
+    dependency("org.assertj:assertj-core:3.24.2")
+    dependency("net.datafaker:datafaker:1.8.0")
+  }
+  // =================== 开发库 ===================
+  imports {
+    mavenBom("io.netty:netty-bom:4.1.89.Final")
+    mavenBom("org.apache.logging.log4j:log4j-bom:2.20.0")
+    mavenBom("io.jsonwebtoken:jjwt-root:0.11.5")
+    mavenBom("io.jooby:jooby-bom:3.0.0.M6")
+    mavenBom("org.mockito:mockito-bom:5.2.0")
+  }
+  dependencies {
+    dependency("org.projectlombok:lombok:1.18.26")
+    dependency("com.typesafe:config:1.4.2")
+    dependency("org.slf4j:slf4j-api:2.0.6")
+    dependency("ch.qos.logback:logback-classic:1.4.5")
+    dependency("com.github.ben-manes.caffeine:caffeine:3.1.4")
+    dependencySet(group: "org.mapstruct", version: "1.5.3.Final") {
+      entry("mapstruct")
+      entry("mapstruct-processor")
+    }
+    dependency("com.password4j:password4j:1.7.0")
+    dependency("com.rabbitmq:amqp-client:5.16.0")
+    // 依赖注入
+    dependencySet(group: "io.avaje", version: "9.0") {
+      entry("avaje-inject-generator")
+      entry("avaje-inject")
+      entry("avaje-inject-test")
+    }
+    // JSON库
+    dependencySet(group: "io.avaje", version: "1.4") {
+      entry("avaje-jsonb-generator")
+      entry("avaje-jsonb")
+    }
+    // HTTP-Web库
+    dependencySet(group: "io.avaje", version: "1.35") {
+      entry("avaje-http-api")
+      entry("avaje-http-jex-generator")
+      entry("avaje-http-client")
+      entry("avaje-http-client-generator")
+    }
+    dependency("io.avaje:avaje-jex-jetty:2.5")
+    dependency("io.avaje:avaje-http-hibernate-validator:3.2")
+    // 数据库
+    dependency("org.postgresql:postgresql:42.5.4")
+    dependencySet(group: "io.ebean", version: "13.17.0-jakarta") {
+      entry("ebean-postgres") {
+        exclude("io.avaje:avaje-config")
+        exclude("org.antlr:antlr4-runtime")
+      }
+      entry("querybean-generator")
+      entry("ebean-querybean")
+    }
+    dependency("io.ebean:ebean-migration:13.7.0")
+    // 工具
+    dependencySet(group: "io.sundr", version: "0.94.0") {
+      entry("transform-annotations")
+      entry("sundr-codegen-velocity")
+    }
+    dependency("io.swagger.core.v3:swagger-annotations:2.2.8")
+    dependency("com.github.houbb:pinyin:0.3.1")
+    dependency("io.nayuki:qrcodegen:1.8.0")
+    dependency("io.jsonwebtoken:jjwt-impl:0.11.5")
+    dependency("com.joyent.util:fast-md5:2.7.1")
+    // 定时任务调度
+    dependency("com.coreoz:wisp:2.3.0")
+
+    dependency("org.simplejavamail:simple-java-mail:8.0.0")
+    dependencySet(group: "io.jstach", version: "0.12.0") {
+      entry("jstachio-apt")
+      entry("jstachio")
+    }
+    dependency("io.specto:hoverfly-java-junit5:0.14.4")
+    dependency("org.hibernate:hibernate-validator:8.0.0.Final")
+    dependency("org.glassfish.expressly:expressly:5.0.0")
+  }
+}

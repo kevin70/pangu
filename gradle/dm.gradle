@@ -78,7 +78,18 @@ dependencyManagement {
       entry("jstachio")
     }
     dependency("io.specto:hoverfly-java-junit5:0.14.4")
+    dependency("jakarta.validation:jakarta.validation-api:3.0.2")
     dependency("org.hibernate:hibernate-validator:8.0.0.Final")
     dependency("org.glassfish.expressly:expressly:5.0.0")
+
+    dependencySet(group: "io.toolisticon.aptk", version: "0.21.0") {
+      entry "aptk-annotationwrapper-api"
+      entry "aptk-tools-java9"
+      entry "aptk-annotationwrapper-processor"
+    }
+    dependencySet(group: "io.toolisticon.cute", version: "0.12.1") {
+      entry "cute"
+      entry "extension-junit5"
+    }
   }
 }

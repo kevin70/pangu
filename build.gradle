@@ -9,7 +9,7 @@ plugins {
 allprojects {
 
   group = "cool.houge.pangu"
-  version = System.getenv("HOUGE_VERSION") ?: "1.0.0-SNAPSHOT"
+  version = System.getenv("PANGU_RELEASE_VERSION") ?: "1.0.0-SNAPSHOT"
 
   apply plugin: "java"
   apply plugin: "jacoco"

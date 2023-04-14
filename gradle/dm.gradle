@@ -22,12 +22,13 @@ dependencyManagement {
     dependency("org.slf4j:slf4j-api:2.0.6")
     dependency("ch.qos.logback:logback-classic:1.4.5")
     dependency("com.github.ben-manes.caffeine:caffeine:3.1.4")
-    dependencySet(group: "org.mapstruct", version: "1.5.3.Final") {
+    dependencySet(group: "org.mapstruct", version: "1.5.4.Final") {
       entry("mapstruct")
       entry("mapstruct-processor")
     }
     dependency("com.password4j:password4j:1.7.0")
     dependency("com.rabbitmq:amqp-client:5.16.0")
+    dependency("com.google.guava:guava:31.1-jre")
     // 依赖注入
     dependencySet(group: "io.avaje", version: "9.0") {
       entry("avaje-inject-generator")
@@ -64,7 +65,12 @@ dependencyManagement {
       entry("transform-annotations")
       entry("sundr-codegen-velocity")
     }
-    dependency("io.swagger.core.v3:swagger-annotations:2.2.8")
+    dependencySet(group: "io.swagger.core.v3", version: "2.2.9") {
+      entry("swagger-annotations")
+      entry("swagger-core")
+    }
+    dependency("com.github.chhorz:javadoc-parser:0.3.1")
+    dependency("com.vladsch.flexmark:flexmark-html2md-converter:0.64.0")
     dependency("com.github.houbb:pinyin:0.3.1")
     dependency("io.nayuki:qrcodegen:1.8.0")
     dependency("io.jsonwebtoken:jjwt-impl:0.11.5")

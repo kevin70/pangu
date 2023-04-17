@@ -7,6 +7,12 @@ dependencyManagement {
   dependencies {
     dependency("org.assertj:assertj-core:3.24.2")
     dependency("net.datafaker:datafaker:1.8.0")
+    dependencySet(group: "org.instancio", version: "2.14.0") {
+      entry("instancio-core")
+      entry("instancio-guava")
+      entry("instancio-junit")
+      entry("instancio-processor")
+    }
   }
   // =================== 开发库 ===================
   imports {

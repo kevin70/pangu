@@ -1,4 +1,4 @@
-package cool.houge.lang;
+package cool.houge.util;
 
 /**
  * 字符串工具类.

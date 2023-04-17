@@ -1,4 +1,4 @@
-package cool.houge.lang;
+package cool.houge.util;
 
 import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
 import static org.junit.jupiter.api.Assertions.*;
@@ -10,6 +10,8 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 import java.util.regex.Pattern;
+
+import cool.houge.util.NanoIdUtils;
 import org.junit.jupiter.api.Test;
 
 /**

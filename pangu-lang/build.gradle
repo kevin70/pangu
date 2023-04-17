@@ -38,3 +38,8 @@ publishing {
 signing {
   sign publishing.publications.maven
 }
+
+dependencies {
+  compileOnly("io.jsonwebtoken:jjwt-api")
+  compileOnly("io.avaje:avaje-jsonb")
+}

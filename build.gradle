@@ -19,11 +19,17 @@ allprojects {
   apply from: "$rootDir/gradle/dm.gradle"
 
   java {
-    sourceCompatibility = JavaVersion.toVersion("17")
-    targetCompatibility = JavaVersion.toVersion("17")
+    withSourcesJar()
+    withJavadocJar()
   }
 
   tasks.withType(JavaCompile).configureEach {
+    sourceCompatibility = JavaVersion.toVersion("17")
+    targetCompatibility = JavaVersion.toVersion("17")
+    options.encoding = "UTF-8"
+  }
+
+  tasks.withType(Javadoc).configureEach {
     options.encoding = "UTF-8"
   }
 

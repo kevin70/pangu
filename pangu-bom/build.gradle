@@ -1,6 +1,7 @@
 dependencyManagement {
   dependencies {
     dependency("${group}:pangu-lang:${version}")
+    dependency("${group}:pangu-jooby-apt:${version}")
   }
 }
 

@@ -61,12 +61,6 @@ public class OpenAPIProcessor extends AbstractAnnotationProcessor {
                 this.readSecurityScheme(element);
             });
 
-        //
-        // roundEnv.getElementsAnnotatedWith(OpenAPIDefinition.class).stream().forEach(this::readOpenAPIDefinition);
-        //
-        // roundEnv.getElementsAnnotatedWith(io.swagger.v3.oas.annotations.security.SecurityScheme.class).stream()
-        //                .forEach(this::readSecurityScheme);
-
         var typeElements = new LinkedHashSet<TypeElement>();
         var annos = Set.of(Path.class, GET.class, POST.class, PUT.class, DELETE.class, PATCH.class);
         roundEnv.getElementsAnnotatedWithAny(annos).forEach(element -> {
@@ -76,8 +70,6 @@ public class OpenAPIProcessor extends AbstractAnnotationProcessor {
                 if (opt.isPresent()) {
                     typeElements.add(
                         getElements().getTypeElement(opt.get().asType().getQualifiedName()));
-                } else {
-                    // TODO: write error
                 }
             }
             if (ElementUtils.CheckKindOfElement.isClass(element)) {
@@ -86,9 +78,6 @@ public class OpenAPIProcessor extends AbstractAnnotationProcessor {
         });
 
         for (TypeElement element : typeElements) {
-            if (element == null) {
-                // TODO: write error
-            }
             new PathDocBuilder(ctx, element).build();
         }
 
@@ -168,9 +157,9 @@ public class OpenAPIProcessor extends AbstractAnnotationProcessor {
             }
 
             // 测试
-            try (var writer = new FileWriter("build/openapi.yaml")) {
-                Yaml31.pretty().writeValue(writer, openAPI);
-            }
+//            try (var writer = new FileWriter("build/openapi.yaml")) {
+//                Yaml31.pretty().writeValue(writer, openAPI);
+//            }
         } catch (IOException e) {
             e.printStackTrace();
             processingEnv.getMessager().printMessage(Kind.ERROR, "写入openapi.json异常");

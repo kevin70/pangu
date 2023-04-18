@@ -1,0 +1,64 @@
+dependencies {
+  annotationProcessor("io.toolisticon.aptk:aptk-annotationwrapper-processor")
+
+  implementation("io.toolisticon.aptk:aptk-annotationwrapper-api")
+  implementation("io.toolisticon.aptk:aptk-tools-java9")
+
+  implementation("com.google.guava:guava")
+  implementation("io.swagger.core.v3:swagger-core")
+  implementation("io.jooby:jooby")
+  implementation("com.github.chhorz:javadoc-parser")
+  implementation("com.vladsch.flexmark:flexmark-html2md-converter")
+  implementation("jakarta.validation:jakarta.validation-api")
+
+  testImplementation("org.junit.jupiter:junit-jupiter")
+  testImplementation("io.toolisticon.cute:cute")
+  testImplementation("io.toolisticon.cute:extension-junit5")
+  testImplementation("io.jooby:jooby-apt")
+}
+
+publishing {
+  publications {
+    maven(MavenPublication) {
+      artifactId = "pangu-jooby-apt"
+      from components.java
+
+      versionMapping {
+        usage("java-api") {
+          fromResolutionOf("runtimeClasspath")
+        }
+        usage("java-runtime") {
+          fromResolutionResult()
+        }
+      }
+
+      pom {
+        name = "Jooby OpenAPI APT"
+        description = "Jooby OpenAPI文档生成工具"
+        licenses {
+          license {
+            name = "The Apache License, Version 2.0"
+            url = "https://www.apache.org/licenses/LICENSE-2.0.txt"
+          }
+        }
+        developers {
+          developer {
+            id = "ZY"
+            name = "Zou Yong"
+            email = "kzou227@qq.com"
+          }
+        }
+
+        scm {
+          connection = "scm:git:https://github.com/kevin70/pangu.git"
+          developerConnection = "scm:git:git@github.com:kevin70/pangu.git"
+          url = "https://github.com/kevin70/pangu"
+        }
+      }
+    }
+  }
+}
+
+signing {
+  sign publishing.publications.maven
+}

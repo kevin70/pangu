@@ -139,6 +139,9 @@ public class OpenAPIProcessor extends AbstractAnnotationProcessor {
             if (!ssw.bearerFormatIsDefaultValue()) {
                 item.bearerFormat(ssw.bearerFormat());
             }
+            if (!ssw.schemeIsDefaultValue()) {
+                item.scheme(ssw.scheme());
+            }
 
             components.addSecuritySchemes(ssw.name(), item);
         }

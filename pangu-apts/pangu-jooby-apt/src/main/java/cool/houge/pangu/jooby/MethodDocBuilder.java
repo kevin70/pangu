@@ -107,12 +107,14 @@ class MethodDocBuilder {
         var securityNames = new LinkedHashSet<String>();
         for (Element e : elements) {
             for (SecurityRequirementWrapper wrap : SecurityRequirementWrapper.wrap(e)) {
-                if (securityNames.add(wrap.name())) {
-                    var item = new SecurityRequirement();
-                    securityNames.forEach(item::addList);
-                    operation.addSecurityItem(item);
-                }
+                securityNames.add(wrap.name());
             }
+        }
+
+        for (String securityName : securityNames) {
+            var item = new SecurityRequirement();
+            item.addList(securityName);
+            operation.addSecurityItem(item);
         }
     }
 
@@ -133,7 +135,7 @@ class MethodDocBuilder {
 
         for (VariableElement ve : parameters) {
             if (ContextParamWrapper.isAnnotated(ve)
-                    || TypeUtils.TypeComparison.isAssignableTo(ve.asType(), Context.class)) {
+                || TypeUtils.TypeComparison.isAssignableTo(ve.asType(), Context.class)) {
                 continue;
             }
             if (PathParamWrapper.isAnnotated(ve)) {
@@ -155,34 +157,34 @@ class MethodDocBuilder {
             // 请求JSON
             if (!form) {
                 ctx.schemaBuilder.addRequestBody(
-                        operation,
-                        ctx.schemaBuilder.toSchema(ve.asType(), ve),
-                        false,
-                        javadoc.param(ve.getSimpleName().toString()));
+                    operation,
+                    ctx.schemaBuilder.toSchema(ve.asType(), ve),
+                    false,
+                    javadoc.param(ve.getSimpleName().toString()));
             } else {
                 // FileUpload 文件上传
                 if (ElementWrapper.wrap(ve).asType().isAssignableTo(FileUpload.class)) {
                     var httpName = ve.getSimpleName().toString();
                     var schema = ctx.schemaBuilder.toSchema(element.asType(), ve);
                     ctx.schemaBuilder.addFormItem(
-                            operation,
-                            httpName,
-                            schema,
-                            javadoc.param(ve.getSimpleName().toString()),
-                            multipart);
+                        operation,
+                        httpName,
+                        schema,
+                        javadoc.param(ve.getSimpleName().toString()),
+                        multipart);
                 }
                 // @FormParam 表单参数
                 if (FormParamWrapper.isAnnotated(ve)) {
                     var httpName = Optional.ofNullable(FormParamWrapper.wrap(ve).value())
-                            .filter(s -> !s.isEmpty())
-                            .orElseGet(() -> ve.getSimpleName().toString());
+                        .filter(s -> !s.isEmpty())
+                        .orElseGet(() -> ve.getSimpleName().toString());
                     var schema = ctx.schemaBuilder.toSchema(element.asType(), ve);
                     ctx.schemaBuilder.addFormItem(
-                            operation,
-                            httpName,
-                            schema,
-                            javadoc.param(ve.getSimpleName().toString()),
-                            multipart);
+                        operation,
+                        httpName,
+                        schema,
+                        javadoc.param(ve.getSimpleName().toString()),
+                        multipart);
                 }
             }
         }
@@ -191,8 +193,8 @@ class MethodDocBuilder {
     private void addParameter(Operation operation, String paramName, VariableElement varElement, Parameter parameter) {
         var schema = ctx.schemaBuilder.toSchema(varElement.asType(), varElement);
         paramName = Optional.ofNullable(paramName)
-                .filter(s -> !s.isEmpty())
-                .orElseGet(() -> varElement.getSimpleName().toString());
+            .filter(s -> !s.isEmpty())
+            .orElseGet(() -> varElement.getSimpleName().toString());
         var desc = javadoc.param(varElement.getSimpleName().toString());
 
         parameter.name(paramName).schema(schema);
@@ -285,5 +287,6 @@ class MethodDocBuilder {
         return element.getReturnType().getKind() == TypeKind.VOID;
     }
 
-    record MethodInfo(HttpMethod method, String path, String produces, String consumes) {}
+    record MethodInfo(HttpMethod method, String path, String produces, String consumes) {
+    }
 }

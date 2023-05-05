@@ -27,7 +27,7 @@ dependencyManagement {
     dependency("org.slf4j:slf4j-api:2.0.6")
     dependency("ch.qos.logback:logback-classic:1.4.5")
     dependency("com.github.ben-manes.caffeine:caffeine:3.1.4")
-    dependencySet(group: "org.mapstruct", version: "1.5.4.Final") {
+    dependencySet(group: "org.mapstruct", version: "1.5.5.Final") {
       entry("mapstruct")
       entry("mapstruct-processor")
     }

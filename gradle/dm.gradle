@@ -84,7 +84,7 @@ dependencyManagement {
     dependency("com.coreoz:wisp:2.3.0")
 
     dependency("org.simplejavamail:simple-java-mail:8.0.0")
-    dependencySet(group: "io.jstach", version: "0.14.0") {
+    dependencySet(group: "io.jstach", version: "0.15.0") {
       entry("jstachio-apt")
       entry("jstachio")
     }

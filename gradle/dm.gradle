@@ -35,13 +35,13 @@ dependencyManagement {
     dependency("com.rabbitmq:amqp-client:5.16.0")
     dependency("com.google.guava:guava:31.1-jre")
     // 依赖注入
-    dependencySet(group: "io.avaje", version: "9.0") {
+    dependencySet(group: "io.avaje", version: "9.1") {
       entry("avaje-inject-generator")
       entry("avaje-inject")
       entry("avaje-inject-test")
     }
     // JSON库
-    dependencySet(group: "io.avaje", version: "1.4") {
+    dependencySet(group: "io.avaje", version: "1.5") {
       entry("avaje-jsonb-generator")
       entry("avaje-jsonb")
     }

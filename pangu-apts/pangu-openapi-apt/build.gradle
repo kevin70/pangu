@@ -10,7 +10,7 @@ dependencies {
   implementation("io.jooby:jooby")
 
   testImplementation("org.junit.jupiter:junit-jupiter")
-  testImplementation("io.github.ascopes.jct:java-compiler-testing:0.7.2")
+  testImplementation("io.github.ascopes.jct:java-compiler-testing:1.0.0-RC1")
 }
 
 //publishing {

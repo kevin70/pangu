@@ -4,4 +4,3 @@ include "pangu-bom"
 include "pangu-lang"
 
 include "pangu-apts:pangu-jooby-apt"
-include "pangu-apts:pangu-openapi-apt"

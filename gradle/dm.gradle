@@ -7,7 +7,7 @@ dependencyManagement {
   dependencies {
     dependency("org.assertj:assertj-core:3.24.2")
     dependency("net.datafaker:datafaker:1.8.0")
-    dependencySet(group: "org.instancio", version: "2.14.0") {
+    dependencySet(group: "org.instancio", version: "2.16.0") {
       entry("instancio-core")
       entry("instancio-guava")
       entry("instancio-junit")
@@ -31,7 +31,7 @@ dependencyManagement {
       entry("mapstruct")
       entry("mapstruct-processor")
     }
-    dependency("com.password4j:password4j:1.7.0")
+    dependency("com.password4j:password4j:1.7.1")
     dependency("com.rabbitmq:amqp-client:5.16.0")
     dependency("com.google.guava:guava:31.1-jre")
     // 依赖注入
@@ -56,7 +56,7 @@ dependencyManagement {
     dependency("io.avaje:avaje-http-hibernate-validator:3.2")
     // 数据库
     dependency("org.postgresql:postgresql:42.5.4")
-    dependencySet(group: "io.ebean", version: "13.17.4-jakarta") {
+    dependencySet(group: "io.ebean", version: "13.19.0-jakarta") {
       entry("ebean-postgres") {
         exclude("io.avaje:avaje-config")
         exclude("org.antlr:antlr4-runtime")
@@ -84,7 +84,7 @@ dependencyManagement {
     dependency("com.coreoz:wisp:2.3.0")
 
     dependency("org.simplejavamail:simple-java-mail:8.0.0")
-    dependencySet(group: "io.jstach", version: "1.0.0") {
+    dependencySet(group: "io.jstach", version: "1.1.0") {
       entry("jstachio-apt")
       entry("jstachio")
     }

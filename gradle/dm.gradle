@@ -19,7 +19,7 @@ dependencyManagement {
     mavenBom("io.netty:netty-bom:4.1.89.Final")
     mavenBom("org.apache.logging.log4j:log4j-bom:2.20.0")
     mavenBom("io.jsonwebtoken:jjwt-root:0.11.5")
-    mavenBom("io.jooby:jooby-bom:3.0.0.M9")
+    mavenBom("io.jooby:jooby-bom:3.0.0.M11")
   }
   dependencies {
     dependency("org.projectlombok:lombok:1.18.26")
@@ -41,7 +41,7 @@ dependencyManagement {
       entry("avaje-inject-test")
     }
     // JSON库
-    dependencySet(group: "io.avaje", version: "1.5") {
+    dependencySet(group: "io.avaje", version: "1.6-RC3") {
       entry("avaje-jsonb-generator")
       entry("avaje-jsonb")
     }

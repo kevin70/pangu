@@ -19,7 +19,7 @@ dependencyManagement {
     mavenBom("io.netty:netty-bom:4.1.89.Final")
     mavenBom("org.apache.logging.log4j:log4j-bom:2.20.0")
     mavenBom("io.jsonwebtoken:jjwt-root:0.11.5")
-    mavenBom("io.jooby:jooby-bom:3.0.0.M11")
+    mavenBom("io.jooby:jooby-bom:3.0.0")
   }
   dependencies {
     dependency("org.projectlombok:lombok:1.18.26")
@@ -56,7 +56,7 @@ dependencyManagement {
     dependency("io.avaje:avaje-http-hibernate-validator:3.2")
     // 数据库
     dependency("org.postgresql:postgresql:42.5.4")
-    dependencySet(group: "io.ebean", version: "13.19.0-jakarta") {
+    dependencySet(group: "io.ebean", version: "13.20.1-jakarta") {
       entry("ebean-postgres") {
         exclude("io.avaje:avaje-config")
         exclude("org.antlr:antlr4-runtime")
@@ -64,7 +64,7 @@ dependencyManagement {
       entry("querybean-generator")
       entry("ebean-querybean")
     }
-    dependency("io.ebean:ebean-migration:13.7.0")
+    dependency("io.ebean:ebean-migration:13.9.0")
     // 工具
     dependencySet(group: "io.sundr", version: "0.94.0") {
       entry("transform-annotations")

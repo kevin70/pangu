@@ -35,7 +35,7 @@ dependencyManagement {
     dependency("com.rabbitmq:amqp-client:5.16.0")
     dependency("com.google.guava:guava:31.1-jre")
     // 依赖注入
-    dependencySet(group: "io.avaje", version: "9.2") {
+    dependencySet(group: "io.avaje", version: "9.4-RC2") {
       entry("avaje-inject-generator")
       entry("avaje-inject")
       entry("avaje-inject-test")

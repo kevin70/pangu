@@ -41,7 +41,7 @@ dependencyManagement {
       entry("avaje-inject-test")
     }
     // JSON库
-    dependencySet(group: "io.avaje", version: "1.6-RC3") {
+    dependencySet(group: "io.avaje", version: "1.6-RC5") {
       entry("avaje-jsonb-generator")
       entry("avaje-jsonb")
     }

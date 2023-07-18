@@ -45,6 +45,14 @@ dependencyManagement {
       entry("avaje-jsonb-generator")
       entry("avaje-jsonb")
     }
+    // Avaje 验证器
+    dependencySet(group: "io.avaje", version: "0.12") {
+      entry("validator-constraints")
+      entry("avaje-validator-generator")
+      entry("avaje-validator")
+      entry("avaje-validator-inject-plugin")
+      entry("avaje-validator-http-plugin")
+    }
     // HTTP-Web库
     dependencySet(group: "io.avaje", version: "1.44") {
       entry("avaje-http-api")

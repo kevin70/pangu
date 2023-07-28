@@ -69,6 +69,10 @@ dependencyManagement {
         exclude("io.avaje:avaje-config")
         exclude("org.antlr:antlr4-runtime")
       }
+      entry("ebean-mysql") {
+        exclude("io.avaje:avaje-config")
+        exclude("org.antlr:antlr4-runtime")
+      }
       entry("querybean-generator")
       entry("ebean-querybean")
     }

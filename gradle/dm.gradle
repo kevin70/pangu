@@ -35,18 +35,18 @@ dependencyManagement {
     dependency("com.rabbitmq:amqp-client:5.16.0")
     dependency("com.google.guava:guava:31.1-jre")
     // 依赖注入
-    dependencySet(group: "io.avaje", version: "9.4-RC2") {
+    dependencySet(group: "io.avaje", version: "9.4") {
       entry("avaje-inject-generator")
       entry("avaje-inject")
       entry("avaje-inject-test")
     }
     // JSON库
-    dependencySet(group: "io.avaje", version: "1.6-RC5") {
+    dependencySet(group: "io.avaje", version: "1.6") {
       entry("avaje-jsonb-generator")
       entry("avaje-jsonb")
     }
     // Avaje 验证器
-    dependencySet(group: "io.avaje", version: "0.12") {
+    dependencySet(group: "io.avaje", version: "0.15") {
       entry("validator-constraints")
       entry("avaje-validator-generator")
       entry("avaje-validator")
@@ -54,7 +54,7 @@ dependencyManagement {
       entry("avaje-validator-http-plugin")
     }
     // HTTP-Web库
-    dependencySet(group: "io.avaje", version: "1.44") {
+    dependencySet(group: "io.avaje", version: "2.0-RC1") {
       entry("avaje-http-api")
       entry("avaje-http-jex-generator")
       entry("avaje-http-client")

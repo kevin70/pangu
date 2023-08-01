@@ -1,8 +1,8 @@
 dependencyManagement {
   // =================== 测试库 ===================
   imports {
-    mavenBom("org.junit:junit-bom:5.9.2")
-    mavenBom("org.mockito:mockito-bom:5.2.0")
+    mavenBom("org.junit:junit-bom:5.10.0")
+    mavenBom("org.mockito:mockito-bom:5.4.0")
   }
   dependencies {
     dependency("org.assertj:assertj-core:3.24.2")

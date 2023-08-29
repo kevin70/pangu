@@ -35,6 +35,7 @@ publishing {
       pom {
         name = "Jooby OpenAPI APT"
         description = "Jooby OpenAPI文档生成工具"
+        url = "https://github.com/kevin70/pangu"
         licenses {
           license {
             name = "The Apache License, Version 2.0"

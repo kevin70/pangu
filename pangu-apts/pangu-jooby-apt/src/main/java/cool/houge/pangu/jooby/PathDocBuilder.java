@@ -2,16 +2,17 @@ package cool.houge.pangu.jooby;
 
 import io.swagger.v3.core.util.PathUtils;
 import io.toolisticon.aptk.tools.ElementUtils;
-import java.util.Optional;
+
 import javax.lang.model.element.TypeElement;
+import java.util.Optional;
 
 /**
  * @author ZY (kzou227@qq.com)
  */
 class PathDocBuilder {
 
-    private DocContext ctx;
-    private TypeElement element;
+    private final DocContext ctx;
+    private final TypeElement element;
 
     PathDocBuilder(DocContext ctx, TypeElement element) {
         this.ctx = ctx;
@@ -21,7 +22,7 @@ class PathDocBuilder {
     void build() {
         var wrapper = PathWrapper.wrap(element);
         ElementUtils.AccessEnclosedElements.getEnclosedMethods(element).stream()
-            .filter(e -> ElementUtils.CheckModifierOfElement.hasPublicModifier(e))
+            .filter(ElementUtils.CheckModifierOfElement::hasPublicModifier)
             .forEach(e -> {
                 // 处理请求函数
                 var p = Optional.ofNullable(wrapper).map(PathWrapper::value).orElse(new String[0]);

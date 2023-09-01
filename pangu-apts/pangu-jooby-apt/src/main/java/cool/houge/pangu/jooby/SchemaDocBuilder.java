@@ -29,7 +29,7 @@ class SchemaDocBuilder {
 
     private final DocContext ctx;
     private final KnownTypes knownTypes;
-    private final Map<String, Schema> schemas = new TreeMap<>();
+    private final Map<String, Schema<?>> schemas = new TreeMap<>();
     private final Map<TypeMirror, Map<String, TypeMirror>> genericTypeMap = new HashMap<>();
 
     SchemaDocBuilder(DocContext ctx) {
@@ -58,7 +58,7 @@ class SchemaDocBuilder {
                 .asType());
     }
 
-    Map<String, Schema> getSchemas() {
+    Map<String, Schema<?>> getSchemas() {
         return schemas;
     }
 

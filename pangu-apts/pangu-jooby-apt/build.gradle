@@ -10,6 +10,7 @@ dependencies {
   implementation("com.github.chhorz:javadoc-parser")
   implementation("com.vladsch.flexmark:flexmark-html2md-converter")
   implementation("jakarta.validation:jakarta.validation-api")
+  implementation("org.slf4j:slf4j-nop")
 
   testImplementation("org.junit.jupiter:junit-jupiter")
   testImplementation("io.toolisticon.cute:cute")

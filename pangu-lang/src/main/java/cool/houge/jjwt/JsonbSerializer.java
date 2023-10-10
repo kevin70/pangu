@@ -7,6 +7,7 @@ import io.avaje.jsonb.Types;
 import io.jsonwebtoken.io.SerializationException;
 import io.jsonwebtoken.io.Serializer;
 
+import java.io.OutputStream;
 import java.util.Map;
 
 /**
@@ -30,6 +31,15 @@ public class JsonbSerializer implements Serializer<Map<String, ?>> {
     public byte[] serialize(Map<String, ?> stringMap) throws SerializationException {
         try {
             return type.toJsonBytes(stringMap);
+        } catch (JsonException e) {
+            throw new SerializationException("序列化JWT失败", e);
+        }
+    }
+
+    @Override
+    public void serialize(Map<String, ?> stringMap, OutputStream out) throws SerializationException {
+        try {
+            type.toJson(stringMap, out);
         } catch (JsonException e) {
             throw new SerializationException("序列化JWT失败", e);
         }

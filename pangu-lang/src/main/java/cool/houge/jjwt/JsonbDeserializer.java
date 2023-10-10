@@ -7,6 +7,7 @@ import io.avaje.jsonb.Types;
 import io.jsonwebtoken.io.DeserializationException;
 import io.jsonwebtoken.io.Deserializer;
 
+import java.io.Reader;
 import java.util.Map;
 
 /**
@@ -30,6 +31,15 @@ public class JsonbDeserializer implements Deserializer<Map<String, ?>> {
     public Map<String, ?> deserialize(byte[] bytes) throws DeserializationException {
         try {
             return type.fromJson(bytes);
+        } catch (JsonException e) {
+            throw new DeserializationException("反序列化JWT失败", e);
+        }
+    }
+
+    @Override
+    public Map<String, ?> deserialize(Reader reader) throws DeserializationException {
+        try {
+            return type.fromJson(reader);
         } catch (JsonException e) {
             throw new DeserializationException("反序列化JWT失败", e);
         }

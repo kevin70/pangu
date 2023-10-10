@@ -52,7 +52,7 @@ public class JsonbSupport implements MediaSupport {
      * @return a new {@link JsonbSupport}
      */
     public static MediaSupport create(Config config) {
-        return create(config, "avaje-jsonb");
+        return create(config, "jsonb");
     }
 
     /**
@@ -77,7 +77,7 @@ public class JsonbSupport implements MediaSupport {
 
     @Override
     public String type() {
-        return "avaje-jsonb";
+        return "jsonb";
     }
 
     @Override

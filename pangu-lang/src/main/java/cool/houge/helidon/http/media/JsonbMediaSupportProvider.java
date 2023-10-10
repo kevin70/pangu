@@ -12,7 +12,7 @@ public class JsonbMediaSupportProvider implements MediaSupportProvider, Weighted
 
     @Override
     public String configKey() {
-        return "avaje-jsonb";
+        return "jsonb";
     }
 
     @Override

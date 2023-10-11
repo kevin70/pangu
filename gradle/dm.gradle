@@ -16,9 +16,9 @@ dependencyManagement {
   }
   // =================== 开发库 ===================
   imports {
+    mavenBom("io.jsonwebtoken:jjwt-root:0.12.2")
     mavenBom("io.netty:netty-bom:4.1.89.Final")
     mavenBom("org.apache.logging.log4j:log4j-bom:2.20.0")
-    mavenBom("io.jsonwebtoken:jjwt-root:0.12.2")
     mavenBom("io.jooby:jooby-bom:3.0.5")
     mavenBom("net.javacrumbs.shedlock:shedlock-bom:5.8.0")
     mavenBom("io.ebean:ebean-bom:13.23.0-jakarta")
@@ -38,6 +38,8 @@ dependencyManagement {
     dependency("com.password4j:password4j:1.7.3")
     dependency("com.rabbitmq:amqp-client:5.16.0")
     dependency("com.google.guava:guava:32.1.2-jre")
+    dependency("io.jsonwebtoken:jjwt-impl:0.12.2")
+    dependency("net.javacrumbs.shedlock:shedlock-provider-jdbc:5.8.0")
     // 依赖注入
     dependencySet(group: "io.avaje", version: "9.5") {
       entry("avaje-inject-generator")

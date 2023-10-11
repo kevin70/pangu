@@ -21,7 +21,7 @@ jobs:
 
       - uses: gradle/gradle-build-action@v2
         with:
-          gradle-version: 8.0.1
+          gradle-version: 8.4
 
       - name: Gradle Build
         run: gradle clean build

@@ -39,6 +39,7 @@ dependencyManagement {
     dependency("com.rabbitmq:amqp-client:5.16.0")
     dependency("com.google.guava:guava:32.1.2-jre")
     dependency("io.jsonwebtoken:jjwt-impl:0.12.2")
+    dependency("com.auth0:java-jwt:4.4.0")
     dependency("net.javacrumbs.shedlock:shedlock-provider-jdbc:5.8.0")
     // 依赖注入
     dependencySet(group: "io.avaje", version: "9.5") {

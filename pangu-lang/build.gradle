@@ -36,9 +36,3 @@ publishing {
 signing {
   sign publishing.publications.maven
 }
-
-dependencies {
-  compileOnly("io.jsonwebtoken:jjwt-api")
-  compileOnly("io.avaje:avaje-jsonb")
-  compileOnly("io.helidon.http.media:helidon-http-media")
-}

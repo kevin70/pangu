@@ -42,7 +42,7 @@ dependencyManagement {
     dependency("com.auth0:java-jwt:4.4.0")
     dependency("net.javacrumbs.shedlock:shedlock-provider-jdbc:5.8.0")
     // 依赖注入
-    dependencySet(group: "io.avaje", version: "9.5") {
+    dependencySet(group: "io.avaje", version: "9.8") {
       entry("avaje-inject-generator")
       entry("avaje-inject")
       entry("avaje-inject-test")

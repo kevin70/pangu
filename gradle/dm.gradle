@@ -22,7 +22,7 @@ dependencyManagement {
     mavenBom("io.jooby:jooby-bom:3.0.5")
     mavenBom("net.javacrumbs.shedlock:shedlock-bom:5.8.0")
     mavenBom("io.ebean:ebean-bom:13.23.0-jakarta")
-    mavenBom("io.helidon:helidon-bom:4.0.0-RC1")
+    mavenBom("io.helidon:helidon-bom:4.0.0")
   }
   dependencies {
     dependency("org.projectlombok:lombok:1.18.30")

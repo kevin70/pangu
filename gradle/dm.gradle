@@ -21,7 +21,7 @@ dependencyManagement {
     mavenBom("org.apache.logging.log4j:log4j-bom:2.20.0")
     mavenBom("io.jooby:jooby-bom:3.0.5")
     mavenBom("net.javacrumbs.shedlock:shedlock-bom:5.8.0")
-    mavenBom("io.ebean:ebean-bom:13.23.0-jakarta")
+    mavenBom("io.ebean:ebean-bom:13.23.1-jakarta")
     mavenBom("io.helidon:helidon-bom:4.0.0")
   }
   dependencies {
@@ -53,7 +53,7 @@ dependencyManagement {
       entry("avaje-jsonb")
     }
     // Avaje 验证器
-    dependencySet(group: "io.avaje", version: "1.1") {
+    dependencySet(group: "io.avaje", version: "1.2") {
       entry("validator-constraints")
       entry("avaje-validator-generator")
       entry("avaje-validator")
@@ -61,7 +61,7 @@ dependencyManagement {
       entry("avaje-validator-http-plugin")
     }
     // HTTP-Web库
-    dependencySet(group: "io.avaje", version: "2.0-RC10") {
+    dependencySet(group: "io.avaje", version: "2.0") {
       entry("avaje-http-api")
       entry("avaje-http-jex-generator")
       entry("avaje-http-client")

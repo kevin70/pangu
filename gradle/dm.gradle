@@ -3,6 +3,7 @@ dependencyManagement {
   imports {
     mavenBom("org.junit:junit-bom:5.10.0")
     mavenBom("org.mockito:mockito-bom:5.6.0")
+    mavenBom("com.fasterxml.jackson:jackson-bom:2.15.3")
   }
   dependencies {
     dependency("org.assertj:assertj-core:3.24.2")

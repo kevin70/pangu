@@ -8,7 +8,7 @@ dependencyManagement {
   dependencies {
     dependency("org.assertj:assertj-core:3.24.2")
     dependency("net.datafaker:datafaker:2.0.2")
-    dependencySet(group: "org.instancio", version: "3.3.1") {
+    dependencySet(group: "org.instancio", version: "3.6.0") {
       entry("instancio-core")
       entry("instancio-guava")
       entry("instancio-junit")
@@ -22,8 +22,9 @@ dependencyManagement {
     mavenBom("org.apache.logging.log4j:log4j-bom:2.20.0")
     mavenBom("io.jooby:jooby-bom:3.0.5")
     mavenBom("net.javacrumbs.shedlock:shedlock-bom:5.8.0")
-    mavenBom("io.ebean:ebean-bom:13.25.0-jakarta")
+    mavenBom("io.ebean:ebean-bom:13.25.1-jakarta")
     mavenBom("io.helidon:helidon-bom:4.0.0")
+    mavenBom("org.apache.logging.log4j:log4j-bom:2.22.0")
   }
   dependencies {
     dependency("org.projectlombok:lombok:1.18.30")

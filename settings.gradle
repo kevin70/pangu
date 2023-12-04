@@ -2,5 +2,3 @@ rootProject.name = "pangu"
 
 include "pangu-bom"
 include "pangu-lang"
-
-include "pangu-apts:pangu-jooby-apt"

@@ -81,7 +81,6 @@ allprojects {
     // Test
     testImplementation("org.junit.jupiter:junit-jupiter")
     testImplementation("org.assertj:assertj-core")
-    testImplementation("net.datafaker:datafaker")
   }
 
   repositories {

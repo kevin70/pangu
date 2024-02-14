@@ -95,6 +95,7 @@ dependencyManagement {
 
     dependency("io.lettuce:lettuce-core:6.3.1.RELEASE")
     dependency("org.bouncycastle:bcprov-jdk18on:1.77")
+    dependency("com.github.kagkarlsson:db-scheduler:13.0.0")
 
     dependencySet(group: "com.google.zxing", version: "3.5.3") {
       entry("javase")

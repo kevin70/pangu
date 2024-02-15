@@ -5,7 +5,7 @@ dependencyManagement {
     mavenBom("io.netty:netty-bom:4.1.105.Final")
     mavenBom("io.helidon:helidon-bom:4.0.3")
     mavenBom("io.jooby:jooby-bom:3.0.5")
-    mavenBom("io.ebean:ebean-bom:13.25.2-jakarta")
+    mavenBom("io.ebean:ebean-bom:14.0.0")
     mavenBom("org.apache.logging.log4j:log4j-bom:2.22.1")
     mavenBom("com.fasterxml.jackson:jackson-bom:2.16.1")
     mavenBom("net.javacrumbs.shedlock:shedlock-bom:5.10.2")

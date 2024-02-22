@@ -1,21 +1,24 @@
+def shedlockVersion = "5.10.2"
+
 dependencyManagement {
   imports {
     mavenBom("org.junit:junit-bom:5.10.1")
     mavenBom("org.mockito:mockito-bom:5.9.0")
     mavenBom("io.netty:netty-bom:4.1.105.Final")
-    mavenBom("io.helidon:helidon-bom:4.0.3")
+    mavenBom("io.projectreactor:reactor-bom:2023.0.3")
+    mavenBom("io.helidon:helidon-bom:4.0.5")
     mavenBom("io.jooby:jooby-bom:3.0.5")
-    mavenBom("io.ebean:ebean-bom:13.25.2-jakarta")
+    mavenBom("io.ebean:ebean-bom:15.0.0-RC")
     mavenBom("org.apache.logging.log4j:log4j-bom:2.22.1")
     mavenBom("com.fasterxml.jackson:jackson-bom:2.16.1")
-    mavenBom("net.javacrumbs.shedlock:shedlock-bom:5.10.2")
+    mavenBom("net.javacrumbs.shedlock:shedlock-bom:$shedlockVersion")
     mavenBom("com.oracle.database.jdbc:ojdbc-bom:23.3.0.23.09")
     mavenBom("org.springframework.boot:spring-boot-dependencies:3.2.1")
   }
 
   dependencies {
-    dependency("org.assertj:assertj-core:3.25.1")
-    dependencySet(group: "org.instancio", version: "4.0.0") {
+    dependency("org.assertj:assertj-core:3.25.3")
+    dependencySet(group: "org.instancio", version: "4.3.2") {
       entry("instancio-core")
       entry("instancio-guava")
       entry("instancio-junit")
@@ -35,16 +38,16 @@ dependencyManagement {
     dependency("com.rabbitmq:amqp-client:5.20.0")
     dependency("com.google.guava:guava:33.0.0-jre")
     dependency("com.auth0:java-jwt:4.4.0")
-    dependency("net.javacrumbs.shedlock:shedlock-provider-jdbc:5.10.2")
+    dependency("net.javacrumbs.shedlock:shedlock-provider-jdbc:$shedlockVersion")
 
     // 依赖注入
-    dependencySet(group: "io.avaje", version: "9.10") {
+    dependencySet(group: "io.avaje", version: "9.11") {
       entry("avaje-inject-generator")
       entry("avaje-inject")
       entry("avaje-inject-test")
     }
     // JSON库
-    dependencySet(group: "io.avaje", version: "1.10-RC3") {
+    dependencySet(group: "io.avaje", version: "1.10") {
       entry("avaje-jsonb-generator")
       entry("avaje-jsonb")
     }
@@ -65,7 +68,7 @@ dependencyManagement {
     }
 
     // 数据库
-    dependency("org.postgresql:postgresql:42.7.1")
+    dependency("org.postgresql:postgresql:42.7.2")
     // 工具
     dependencySet(group: "io.sundr", version: "0.94.0") {
       entry("transform-annotations")
